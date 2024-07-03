@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - npm install
+  build:
+    commands:
+      - npx cypress run
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
