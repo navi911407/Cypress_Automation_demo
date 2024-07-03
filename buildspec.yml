@@ -3,11 +3,17 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 12
+      nodejs: 20
     commands:
       - npm install
+
+  pre_build:
+    commands:
+      - git clone https://github.com/navi911407/Cypress_Automation_demo.git /tmp/repo
+
   build:
     commands:
+      - cd /tmp/repo
       - npx cypress run
 
 artifacts:
