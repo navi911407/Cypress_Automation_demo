@@ -5,7 +5,10 @@
   "scripts": {
     "test": "cypress open",
     "test:run": "cypress run",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "cy:verify": "cypress verify",
+    "cy:info": "cypress info",
+    "cy:run": "cypress run"
   },
   "keywords": [],
   "author": "",
