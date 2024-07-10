@@ -3,11 +3,17 @@
       "target": "es5",
       "lib": ["es5", "es6", "dom"],
       "types": ["cypress", "node"],
+      "module": "commonjs",
+      "outDir": "./dist",
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
       "strict": true,
-      "noEmit": true
+      "noEmit": true,
+      "baseUrl": "./",
+      "paths": {
+        "@/*": ["src/*"]
+      }
     },
     "include": ["cypress/**/*.ts"]
   }

@@ -23,3 +23,14 @@ phases:
   build:
     commands:
       - npx cypress run
+      
+artifacts:
+  files:
+    - '/codebuild/output/src1791735467/src/github.com/navi911407/Cypress_Automation_demo/cypress/videos/*.mp4'
+    - '/codebuild/output/src1791735467/src/github.com/navi911407/Cypress_Automation_demo/cypress/screenshots/*.png'
+  discard-paths: no
+  base-directory: /codebuild/output/
+
+cache:
+  paths:
+    - '/codebuild/output/node_modules/**/*'
