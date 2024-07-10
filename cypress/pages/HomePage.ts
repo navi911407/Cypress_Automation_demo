@@ -1,6 +1,6 @@
 class HomePage {
 
-    private searchArea = 'textarea[title=Buscar]';
+    private searchArea = 'textarea[title=Search]';
   
     visitHomePage() {
       cy.visit('/');
