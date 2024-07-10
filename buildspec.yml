@@ -7,8 +7,7 @@ phases:
     commands:
       # Set COMMIT_INFO variables to send Git specifics to Cypress Cloud when recording
       # https://docs.cypress.io/guides/continuous-integration/introduction#Git-information
-      - export COMMIT_INFO_BRANCH="$(git rev-parse HEAD | xargs git name-rev |
-        cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
+      - export COMMIT_INFO_BRANCH="$(git rev-parse HEAD | xargs git name-rev | cut -d' ' -f2 | sed 's/remotes\/origin\///g')"
       - export COMMIT_INFO_MESSAGE="$(git log -1 --pretty=%B)"
       - export COMMIT_INFO_EMAIL="$(git log -1 --pretty=%ae)"
       - export COMMIT_INFO_AUTHOR="$(git log -1 --pretty=%an)"
@@ -22,15 +21,15 @@ phases:
       - npx cypress info
   build:
     commands:
-      - npx cypress run
-      
+      - npx cypress run --record --key 73d9e387-617b-4f87-9dea-fa3f20d72fb9
+
 artifacts:
   files:
-    - '/codebuild/output/src1791735467/src/github.com/navi911407/Cypress_Automation_demo/cypress/videos/*.mp4'
-    - '/codebuild/output/src1791735467/src/github.com/navi911407/Cypress_Automation_demo/cypress/screenshots/*.png'
+    - '**/cypress/videos/**/*.mp4'
+    - '**/cypress/screenshots/**/*.png'
   discard-paths: no
-  base-directory: /codebuild/output/
+  base-directory: /codebuild/output/src1791735467/src/github.com/navi911407/Cypress_Automation_demo
 
 cache:
   paths:
-    - '/codebuild/output/node_modules/**/*'
+    - '/codebuild/output/src1791735467/src/github.com/navi911407/Cypress_Automation_demo/node_modules/**/*'
