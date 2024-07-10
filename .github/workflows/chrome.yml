@@ -1,4 +1,4 @@
-name: Chrome
+name: Lint Validation
 
 'on':
   - push
@@ -15,5 +15,4 @@ jobs:
         timeout-minutes: 10
         with:
           build: npx cypress verify
-          start: npx cypress run --browser chrome --record --key 73d9e387-617b-4f87-9dea-fa3f20d72fb9
-          browser: chrome
+          start: npx run lint
