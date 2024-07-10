@@ -10,6 +10,6 @@ export default defineConfig({
   viewportHeight: 720,
 
   e2e: {
-    baseUrl: 'https://www.google.com',
+    baseUrl: 'https://www.google.com.mx',
   },
 });
